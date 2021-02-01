@@ -1,0 +1,16 @@
+{% extends 'Taxi/base.html' %}
+{% block bodyblock %}
+<div style="margin-top:60px;width:600px" class="container">
+  <div class="card text-center">
+    <div class="card-header">
+      Ride ID: {{ bill.pk }}
+    </div>
+    <div class="card-body">
+      <p class="card-text">Customer Name: <span style="font-weight:bold">{{ bill.customer_name }}</span></p>
+      <p class="card-text">Customer Phone: <span style="font-weight:bold">{{ bill.customer_phone }}</span></p>
+      <p class="card-text">From: <span style="font-weight:bold">{{ bill.from_location}}</span></p>
+      <p class="card-text">To: <span style="font-weight:bold">{{ bill.to_location}}</span></p>
+  </div>
+</div>
+</div>
+{% endblock %}

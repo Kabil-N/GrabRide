@@ -1,0 +1,50 @@
+{% extends 'Taxi/base.html' %}
+{% block bodyblock %}
+
+
+      <div style="margin:auto; padding:10px" class="container">
+        <div class="card">
+          <div style="text-align:center;"class="card-body">
+            <h5 class="card-title">Add Driver</h5>
+            <form action="" method="POST">
+                {% csrf_token %}
+                <br>
+                {{user_form.username}}
+                <br>
+                {{user_form.first_name}}
+                <br>
+                {{user_form.last_name}}
+                <br>
+                {{driver_form.phone_number}}
+                <br>
+                {{user_form.password}}
+                <br>
+                <select name="city"style="width:500px;height:36px;border: 1px solid grey;border-radius: 3px;">
+                  {% for city in cities%}
+                    <option class="form-control" name="place" value="{{city}}">{{city}}</option>
+                  {% endfor%}
+                </select>
+                <br>
+                <br>
+                <select name="vehi"style="width:500px;height:36px;border: 1px solid grey;border-radius: 3px;" class="" name="">
+                  {% for vehicle in vehicles %}
+                    <h1>{{vehicle}}</h1>
+                    <option class="form-control" name="vehicle"value="{{vehicle}}">{{vehicle}}</option>
+                  {% endfor %}
+                </select>
+                <br><br>
+                {% if messages %}
+                  {% for message in messages %}
+                    <div class="alert alert-danger" role="alert">
+                      {{message}}
+                    </div>
+                {% endfor %}
+                {% endif %}
+                <button style="width:200px" type="submit" class="btn btn-primary" name="button">Register</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+
+{% endblock %}

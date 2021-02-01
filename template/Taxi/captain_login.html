@@ -1,0 +1,25 @@
+{% extends 'Taxi/base.html' %}
+{% block bodyblock %}
+  <div style="padding-top:10px" class="container">
+    <div class="card" style="width: 500px; margin: auto;margin-top:80px">
+      <h4 style="margin:auto;padding-top:70px">Captain Login</h4>
+      <div class="card-body">
+        <form method="POST" action="{% url 'login_validation' %}">
+          {% csrf_token %}
+          <div class="form-group">
+            <label for="username">User Name</label>
+            <input name="username"type="text" class="form-control">
+
+          </div>
+          <div class="form-group">
+            <label for="userpassword">Password</label>
+            <input name="userpassword" type="password" class="form-control">
+          </div>
+          <div style="text-align:center">
+            <button type="submit" style="margin-bottom:70px"class="btn btn-primary">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}
